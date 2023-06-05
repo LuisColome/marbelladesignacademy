@@ -1,0 +1,86 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+// Title fixed as a background
+.page {
+    .content-wrap {
+        & > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mda-huge-font-size {
+            font-size: clamp(4rem, 18.63vw + -1.473rem, 12.5rem);
+            line-height: 0.88;
+            margin-block-end: 1rem;
+        }
+
+        // Fixed the title.
+        .fixed-title-as-background {
+            width: 100%;
+            max-width: 1290px;
+            margin-inline: auto;
+            position: fixed;
+            inset: 1rem auto auto auto;
+            // transform: translateX(120px) translateY(-50%);
+            opacity: 0;
+            letter-spacing: -0.04em;
+            text-align: center;
+
+            transition: all 0s ease-in-out;
+            will-change: opacity;
+            z-index: 0;
+
+            &.visible {
+                opacity: 0.1;
+                transition: opacity 0.2s ease-in-out;
+                // transform: translateX(0) translateY(0);
+            }
+        }
+    }
+}
+
+.wp-block-group.mda-custom-intro {
+    position: relative;
+    flex-flow: column-reverse;
+    gap: 0;
+
+    > div:first-child {
+        position: relative;
+        z-index: 2;
+        transform: translateY(-2rem);
+    }
+
+    @include media(">=medium") {
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 65vh;
+
+        > div:first-child {
+            transform: translateY(calc(-10% - 4vh)) translateX(2rem);
+        }
+    }
+
+    @include media(">=large") {
+        flex-flow: row;
+        align-items: center;
+        min-height: 65vh;
+        transform: translateY(0);
+
+        > div:first-child {
+            max-width: 38rem;
+            transform: translateY(0) translateX(20%);
+        }
+
+        .wp-block-image {
+            img {
+                position: absolute;
+                z-index: 0;
+                object-fit: cover;
+                inset: 0 0 0 auto;
+                height: 100%;
+                width: 75%;
+            }
+        }
+    }
+}

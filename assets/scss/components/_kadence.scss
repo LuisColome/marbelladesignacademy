@@ -1,0 +1,85 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+/* Kadence
+--------------------------------------------------- */
+.mda-main-slider {
+    .kt-blocks-carousel {
+        padding: 0;
+    }
+}
+
+// Style the arrows from Kadence testimonial slider
+.wp-site-blocks {
+    .kt-blocks-carousel {
+        .slick-prev,
+        .slick-next {
+            background-color: var(--wp-palette-1);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            opacity: 1;
+            transition: var(--animation-fast);
+
+            &:hover {
+                background-color: var(--wp-palette-3);
+            }
+        }
+    }
+
+    .wp-block-kadence-testimonials {
+        .kt-blocks-carousel {
+            .splide__arrow--next {
+                right: -0.5rem;
+            }
+            .splide__arrow--prev {
+                left: -0.5rem;
+            }
+        }
+    }
+}
+
+// buttons - Fix the transition timing
+.wp-site-blocks {
+    .kb-button {
+        transition: var(--animation-fast);
+        // &:hover {
+        .kb-svg-icon-wrap {
+            transition: var(--animation-fast);
+        }
+        // }
+    }
+}
+
+// We fix the bottom footer (Copyright) to be smaller
+.site-footer {
+    .site-bottom-footer-inner-wrap {
+        padding-block: 0;
+    }
+}
+
+// Teak to make columns strech
+.wp-block-kadence-rowlayout {
+    &.has-columns-streched {
+        .kt-row-column-wrap {
+            .wp-block-kadence-column {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+// FAcilities page (boxes)
+.wp-block-kadence-infobox.is-facility-box .kt-blocks-info-box-link-wrap {
+    min-height: 180px;
+}
+
+.wp-block-kadence-testimonials {
+    &.has-testimonial-content-left-aligned {
+        .kt-testimonial-grid-wrap {
+            .kt-testimonial-content {
+                text-align: left;
+            }
+        }
+    }
+}

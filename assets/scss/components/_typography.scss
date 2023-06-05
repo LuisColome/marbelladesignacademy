@@ -1,0 +1,68 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+h1 {
+    font-size: var(--hfs-1);
+    line-height: 1;
+    color: var(--wp-palette-1);
+}
+
+h2 {
+    font-size: var(--hfs-2);
+    line-height: 1;
+    color: var(--wp-palette-1);
+}
+
+h3 {
+    font-size: var(--hfs-3);
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: var(--hfs-4);
+    line-height: 1.2;
+}
+
+h5 {
+    font-size: var(--hfs-5);
+    line-height: 1.35;
+}
+
+h6 {
+    font-size: var(--hfs-6);
+    line-height: 1.35;
+}
+
+.content-area {
+    .wp-block-heading {
+        margin-block-end: max(1rem, 0.5ch);
+    }
+}
+
+p {
+    margin: 0 0 1rem;
+    padding: 0;
+    overflow-x: initial;
+}
+
+.single-content p {
+    margin: 0 0 1rem;
+}
+
+.content-area {
+    a:not(.info-box-link) {
+        font-weight: 600;
+    }
+}
+
+// Heading class used on the home slider.
+.mda-large-heading {
+    font-size: var(--hfs-1);
+    font-weight: 900;
+    margin-block: 0.5rem;
+    line-height: 0.85;
+}
+
+.mda-huge-heading {
+    font-size: var(--hfs-0);
+}

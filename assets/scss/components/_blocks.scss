@@ -1,0 +1,51 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+.wp-block-button {
+    &__link {
+        font-family: var(--ff-heading);
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+// MDA History timeline
+.wp-block-group {
+    &.is-layout-flex {
+        gap: 0.5rem;
+        &.has-aligned-items-start {
+            align-items: start;
+        }
+
+        &.mda-history {
+            display: grid;
+            grid-template-columns: 0.65fr 1.75fr 2.5fr;
+            align-items: start;
+            gap: 0.5rem 1rem;
+
+            margin-block-end: 1.5rem;
+
+            @include media("<=medium") {
+                grid-template-columns: min(300px, 40%) 1fr;
+
+                .wp-block-image {
+                    grid-column: 1 / 2;
+                }
+            }
+
+            @include media("<=mobile_menu") {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+// Image block
+.single-content {
+    .wp-block-group.is-layout-flex {
+        .wp-block-image {
+            margin: 0;
+        }
+    }
+}

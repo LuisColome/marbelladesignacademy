@@ -1,0 +1,179 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+/* WP Forms
+--------------------------------------------------- */
+// Some general styles
+.wpforms-container-full {
+    &.mda-application-form {
+        .wpforms-form {
+            // Default for headings
+            h2 {
+                font-size: var(--hfs-2);
+                text-transform: uppercase;
+                margin-block: 1rem 1em;
+            }
+            h4 {
+                font-size: var(--hfs-4);
+                margin-block: 1rem 1em;
+            }
+
+            // Max-width for the page indicator on top of the form.
+            .wpforms-page-indicator {
+                max-width: 37.5rem;
+                margin-inline: auto;
+            }
+
+            // Pagination buttons
+            .wpforms-field-pagebreak {
+                margin-block: 2rem;
+                &:last-of-type {
+                    border-top: 1px solid var(--wp-palette-7);
+                }
+
+                // Button styles
+                .wpforms-page-button {
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    background-color: var(--wp-palette-7);
+                    font-family: var(--ff-heading);
+                    font-weight: 700;
+                    color: white;
+                    text-transform: uppercase;
+                    border-radius: 0.5rem;
+
+                    &:hover {
+                        background-color: var(--wp-palette-1);
+                    }
+                }
+            }
+            .wpforms-submit-container {
+                display: flex;
+                justify-content: center;
+                .wpforms-submit {
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    background-color: var(--wp-palette-1);
+                    font-family: var(--ff-heading);
+                    font-weight: 700;
+                    color: white;
+                    text-transform: uppercase;
+                    border-radius: 0.5rem;
+
+                    &:hover {
+                        background-color: var(--wp-palette-7);
+                    }
+                }
+            }
+        }
+    }
+}
+.wpforms-container-full {
+    &.mda-application-form {
+        .wpforms-page:not(.wpforms-page-1):not(.mda-page-indicator) {
+            width: min(32rem, 100%);
+            margin-inline: auto;
+        }
+    }
+}
+
+// Big boxes to choose the course. (need a lot of specificity)
+.wpforms-container-full {
+    &.mda-application-form {
+        .wpforms-form {
+            .mda-choosing-course {
+                // we stablish the colums for the boxes
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(
+                        auto-fill,
+                        minmax(250px, 1fr)
+                    );
+                    // Each box with the main color as a background
+                    li {
+                        .wpforms-field-label-inline {
+                            background-color: var(--wp-palette-1);
+                            padding: 0;
+                            position: relative;
+                            aspect-ratio: 1/1;
+
+                            // The colors are GIF images.
+                            img {
+                                position: absolute;
+                                inset: 0;
+                                width: 100%;
+                                height: 100;
+                            }
+
+                            // Labels are floating on the center fo the boxes.
+                            .wpforms-image-choices-label {
+                                position: absolute;
+                                inset: 50% auto auto;
+                                transform: translateY(-50%);
+                                font-size: var(--hfs-4);
+                                font-weight: 900;
+                                text-align: left;
+                                color: white;
+                                margin-inline: 1rem;
+                                margin-block: 0;
+                            }
+                        }
+
+                        // Square selectors
+                        .wpforms-image-choices-image {
+                            aspect-ratio: 1/1;
+                            transition: var(--animation-fast);
+                        }
+
+                        // No GIF images on active boxes
+                        &.wpforms-selected,
+                        &:hover {
+                            .wpforms-image-choices-image {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wpforms-container-full {
+    &.mda-application-form {
+        .wpforms-form {
+            .mda-select-date-field {
+                ul.wpforms-image-choices {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // gap: 1rem;
+
+                    .wpforms-field-label-inline {
+                        background-color: var(--wp-palette-7);
+                        border: none;
+                        transition: var(--animation-fast);
+
+                        &:hover {
+                            background-color: var(--wp-palette-1);
+                        }
+
+                        .wpforms-image-choices-label {
+                            color: white;
+                            margin-block: 0.25rem;
+                            margin-inline: 0.5rem;
+                        }
+                    }
+
+                    li {
+                        &.wpforms-selected {
+                            .wpforms-field-label-inline {
+                                background-color: var(--wp-palette-1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

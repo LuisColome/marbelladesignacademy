@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+.popup-drawer {
+    // display: flex;
+    .drawer-inner {
+        transition: all 0.45s cubic-bezier(0.7, 0.1, 0.2, 1);
+        will-change: transform, rotate, opacity;
+    }
+
+    &.active {
+        .drawer-inner {
+            transition: all 0.65s cubic-bezier(0.7, 0.1, 0.2, 1);
+            transform: translateX(0%) rotate(0.001deg);
+        }
+    }
+
+    .drawer-header {
+        .drawer-toggle {
+            background-color: #fff;
+            border-radius: 200px;
+            padding: 0.35rem;
+            top: 1rem;
+            transform: scale(0) rotate(-165deg);
+            opacity: 0;
+            transition: all 0.45s cubic-bezier(0.7, 0.1, 0.2, 1);
+            will-change: transorm, opacity;
+        }
+    }
+
+    &.active {
+        .drawer-header {
+            .drawer-toggle {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+                transition: transform 0.75s cubic-bezier(0.41, 0.25, 0.16, 1.67)
+                        0.3s,
+                    opacity 0.65s ease-in-out;
+            }
+        }
+    }
+}
