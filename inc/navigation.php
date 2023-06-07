@@ -2,7 +2,7 @@
 /**
  * Navigation
  *
- * @package     LuisColome23
+ * @package     MarbellaDesignAcademy
  * @author      Luis Colomé
  * @since       0.3.0
  * @license     GPL-2.0+
@@ -43,19 +43,46 @@ function ea_mobile_menu_toggle() {
 
     $moreinfolink= get_field('mda_more_info_button_url', 'options');
 
-	$output = '<div class="mdabuttons">';
-        // $output .= '<button class="mdabutton mdabutton__info">';
-            $output .= '<a href="'. $moreinfolink .'" class="mdabutton mdabutton__info">';
-                $output .= '<div class="mdabutton__icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M172.309 875.999q-30.308 0-51.308-21t-21-51.308V348.309q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v455.382q0 30.308-21 51.308t-51.308 21H172.309ZM480 598.306 160 393.691v410q0 5.385 3.462 8.847 3.462 3.462 8.847 3.462h615.382q5.385 0 8.847-3.462 3.462-3.462 3.462-8.847v-410L480 598.306ZM480 536l313.846-200H166.154L480 536ZM160 393.691V336 803.691q0 5.385 3.462 8.847 3.462 3.462 8.847 3.462H160V393.691Z"/></svg></div>';
-                $output .= '<span class="mdabutton__text">More info</span>';
-                $output .= '<span class="screen-reader-text">More info</span>';
-            $output .= '</a>';
-        // $output .= '</button>';
-        $output .= '<button class="mdabutton mdabutton__menu">';
-            $output .= '<div class="mdabutton__icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M130.001 801.384v-59.999h699.998v59.999H130.001Zm0-195.385v-59.998h699.998v59.998H130.001Zm0-195.384v-59.999h699.998v59.999H130.001Z"/></svg></div>';
-            $output .= '<span class="mdabutton__text">Menu</span>';
-            $output .= '<span class="screen-reader-text">Menu</span>';
-        $output .= '</button>';
-    $output .= '</div>';
-    return $output;
+	?>
+
+    <div class="mdabuttons">
+        
+        <?php if( $moreinfolink ): ?>
+        <a href="<?php echo $moreinfolink ?>" class="mdabutton mdabutton__info">
+            <div class="mdabutton__icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 96 960 960"
+                    width="24"
+                >
+                    <path
+                        d="M172.309 875.999q-30.308 0-51.308-21t-21-51.308V348.309q0-30.308 21-51.308t51.308-21h615.382q30.308 0 51.308 21t21 51.308v455.382q0 30.308-21 51.308t-51.308 21H172.309ZM480 598.306 160 393.691v410q0 5.385 3.462 8.847 3.462 3.462 8.847 3.462h615.382q5.385 0 8.847-3.462 3.462-3.462 3.462-8.847v-410L480 598.306ZM480 536l313.846-200H166.154L480 536ZM160 393.691V336 803.691q0 5.385 3.462 8.847 3.462 3.462 8.847 3.462H160V393.691Z"
+                    />
+                </svg>
+            </div>
+            <span class="mdabutton__text">More info</span>
+            <span class="screen-reader-text">More info</span>
+        </a>
+        <?php endif; ?>
+
+        <button class="mdabutton mdabutton__menu">
+            <div class="mdabutton__icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 96 960 960"
+                    width="24"
+                >
+                    <path
+                        d="M130.001 801.384v-59.999h699.998v59.999H130.001Zm0-195.385v-59.998h699.998v59.998H130.001Zm0-195.384v-59.999h699.998v59.999H130.001Z"
+                    />
+                </svg>
+            </div>
+            <span class="mdabutton__text">Menu</span>
+            <span class="screen-reader-text">Menu</span>
+        </button>
+    </div>
+
+    <?php
 }
