@@ -864,6 +864,55 @@ p {
             transform: translateY(-16px);
 }
 
+.wp-site-blocks .team-members {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.wp-site-blocks .team-members__inner {
+    min-height: 110vh;
+}
+.wp-site-blocks .team-members .team-member__img {
+    max-width: 175px;
+}
+.wp-site-blocks .team-members .team-member__title {
+    color: var(--global-palette1);
+    text-align: center;
+    margin-block: 0.5rem 1rem;
+}
+.wp-site-blocks .team-members .team-member__title a {
+    font-weight: 900;
+}
+.wp-site-blocks .team-members .team-member__position {
+    text-align: center;
+    color: var(--global-palette1);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+}
+.wp-site-blocks .team-members .team-member__intro {
+    line-height: 1.4;
+}
+.wp-site-blocks .team-members .team-member__readmore {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    gap: 0.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+}
+
 /* WP Forms
 --------------------------------------------------- */
 .wpforms-container-full.mda-application-form .wpforms-form h2 {
@@ -918,6 +967,44 @@ p {
 }
 .wpforms-container-full.mda-application-form .wpforms-form .wpforms-submit-container .wpforms-submit:hover {
     background-color: var(--wp-palette-7);
+}
+.wpforms-container-full.mda-application-form .wpforms-form input.wpforms-field-medium,
+.wpforms-container-full.mda-application-form .wpforms-form select.wpforms-field-medium,
+.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-row.wpforms-field-medium {
+    max-width: 100%;
+}
+.wpforms-container-full.mda-application-form .wpforms-form input[type=date],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=datetime],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=datetime-local],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=email],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=month],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=number],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=password],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=range],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=search],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=tel],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=text],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=time],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=url],
+.wpforms-container-full.mda-application-form .wpforms-form input[type=week],
+.wpforms-container-full.mda-application-form .wpforms-form select,
+.wpforms-container-full.mda-application-form .wpforms-form textarea {
+    background-color: var(--wp-palette-8);
+    border: 1px solid var(--wp-palette-7);
+    height: 3rem;
+}
+.wpforms-container-full.mda-application-form .wpforms-form input:focus,
+.wpforms-container-full.mda-application-form .wpforms-form textarea:focus,
+.wpforms-container-full.mda-application-form .wpforms-form select:focus,
+.wpforms-container-full.mda-application-form .wpforms-form .is-focused .choices__inner,
+.wpforms-container-full.mda-application-form .wpforms-form .is-open .choices__inner,
+.wpforms-container-full.mda-application-form .wpforms-form .is-open .choices__list--dropdown {
+    background-color: var(--wp-palette-9);
+    border: 1px solid var(--wp-palette-1);
+}
+.wpforms-container-full.mda-application-form .wpforms-form .wpformsnote {
+    background-color: var(--global-palette2);
+    padding: 1rem;
 }
 
 .wpforms-container-full.mda-application-form .wpforms-page:not(.wpforms-page-1):not(.mda-page-indicator) {
