@@ -1,5 +1,16 @@
 <?php
 /**
+ * MDA Kadence Child Theme
+ *
+ * This file adds functions to the Genesis Marbella Design Academy Kadence Child Theme.
+ *
+ * @package     MarbellaDesignAcademy
+ * @author      Luis Colomé
+ * @license     GPL-2.0-or-later
+ * @link        https://luiscolome.com/
+ */
+
+/**
  * Setup Child Theme Styles
  */
 function marbelladesignacademy_enqueue_styles() {
