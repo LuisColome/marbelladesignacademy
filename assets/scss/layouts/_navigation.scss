@@ -1,40 +1,40 @@
 @use "abstracts" as *;
 @use "../vendor/include-media" as *;
 
-// Main menu inside lcm-aside
-.menu {
-    .menu-item {
-        transform: translateY(0);
-        opacity: 1;
-        transition: all 0.3s ease-in-out;
-        will-change: transform;
+// Aside navigation container.
+.lcm-aside {
+    width: min(740px, 100%);
+    padding: 15vh max(3vw, 1.5rem) 10vh max(3vw, 1.5rem);
+    height: 100vh;
+    background-color: var(--wp-palette-1);
 
-        &.only-aside {
-            display: none;
-        }
+    position: fixed;
+    right: 0; // It is important not to use inset due to an issue on Safari.
+    top: 0;
+    z-index: 106;
+    transform: translate(100%, 0) rotate(0.001deg);
+    transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
+    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    will-change: transform;
 
-        &:nth-child(6) {
-            transition-delay: 0s;
-        }
-        &:nth-child(5) {
-            transition-delay: 0.05s;
-        }
-        &:nth-child(4) {
-            transition-delay: 0.1s;
-        }
-        &:nth-child(3) {
-            transition-delay: 0.15s;
-        }
-        &:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-        &:nth-child(1) {
-            transition-delay: 0.25s;
+    // Show the menu if active.
+    .nav-active & {
+        transform: translate(0, 0) rotate(0.001deg);
+        transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    }
+
+    // Menu close button (X icon)
+    &__close {
+        position: absolute;
+        inset: 1rem 2rem auto auto;
+        cursor: pointer;
+        svg {
+            fill: white;
         }
     }
 }
 
-//
+// Menu styles
 .lcm-aside {
     .menu {
         //Beacuse I don't have the social row, jet.
@@ -88,13 +88,53 @@
             }
         }
     }
+
+    // Adds menu items animations
+    .menu {
+        > .menu-item {
+            transform: translateX(110px);
+            transition: all 0.4s 0.3s ease-in-out;
+            will-change: transform;
+        }
+    }
+
+    .nav-active & {
+        .menu {
+            // Animation for menu items when open lcm-aside
+            > .menu-item {
+                transform: translateX(0px);
+                transition: all 0.4s 0.2s ease-in-out;
+                will-change: transform;
+
+                &:nth-child(6) {
+                    transition-delay: 0.6s;
+                }
+                &:nth-child(5) {
+                    transition-delay: 0.54s;
+                }
+                &:nth-child(4) {
+                    transition-delay: 0.48s;
+                }
+                &:nth-child(3) {
+                    transition-delay: 0.42s;
+                }
+                &:nth-child(2) {
+                    transition-delay: 0.36s;
+                }
+                &:nth-child(1) {
+                    transition-delay: 0.3s;
+                }
+            }
+        }
+    }
 }
 
 // Menu toggle style  animations
 .wp-site-blocks {
     .mdabuttons {
         position: fixed;
-        inset: 1rem 1rem auto auto;
+        right: 1rem; // It is important not to use inset due to an issue on Safari.
+        top: 1rem;
         display: flex;
         flex-flow: column-reverse nowrap;
         justify-content: flex-end;
@@ -213,39 +253,6 @@ body.noscroll {
     overflow: hidden;
     #kt-scroll-up.scroll-visible {
         display: none;
-    }
-}
-
-// Aside navigation block - General styles
-.lcm-aside {
-    width: min(740px, 100%);
-    // max-width: 784px;
-    padding: 15vh max(3vw, 1.5rem) 10vh max(3vw, 1.5rem);
-    height: 100vh;
-    background-color: var(--wp-palette-1);
-
-    position: fixed;
-    inset: 0 0 0 auto;
-    z-index: 106;
-    transform: translate(100%, 0) rotate(0.001deg);
-    transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
-    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    will-change: transform;
-
-    // Menu close button (X icon)
-    &__close {
-        position: absolute;
-        inset: 1rem 2rem auto auto;
-        cursor: pointer;
-        svg {
-            fill: white;
-        }
-    }
-
-    // Show the menu if active.
-    .nav-active & {
-        transform: translate(0, 0) rotate(0.001deg);
-        transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
     }
 }
 
