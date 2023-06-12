@@ -11,7 +11,7 @@
         display: grid;
         grid-template-columns: 1fr;
         @include media(">medium") {
-            grid-template-columns: repeat(2, 50%);
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

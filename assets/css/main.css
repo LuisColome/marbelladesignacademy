@@ -107,40 +107,40 @@ html ::-webkit-scrollbar-thumb {
     }
 }
 
-.menu .menu-item {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+.lcm-aside {
+    width: min(740px, 100%);
+    padding: 15vh max(3vw, 1.5rem) 10vh max(3vw, 1.5rem);
+    height: 100vh;
+    background-color: var(--wp-palette-1);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 106;
+    -webkit-transform: translate(100%, 0) rotate(0.001deg);
+            transform: translate(100%, 0) rotate(0.001deg);
+    -webkit-transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
+            transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
     will-change: transform;
 }
-.menu .menu-item.only-aside {
-    display: none;
+.nav-active .lcm-aside {
+    -webkit-transform: translate(0, 0) rotate(0.001deg);
+            transform: translate(0, 0) rotate(0.001deg);
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
 }
-.menu .menu-item:nth-child(6) {
-    -webkit-transition-delay: 0s;
-            transition-delay: 0s;
+.lcm-aside__close {
+    position: absolute;
+    inset: 1rem 2rem auto auto;
+    cursor: pointer;
 }
-.menu .menu-item:nth-child(5) {
-    -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s;
-}
-.menu .menu-item:nth-child(4) {
-    -webkit-transition-delay: 0.1s;
-            transition-delay: 0.1s;
-}
-.menu .menu-item:nth-child(3) {
-    -webkit-transition-delay: 0.15s;
-            transition-delay: 0.15s;
-}
-.menu .menu-item:nth-child(2) {
-    -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
-}
-.menu .menu-item:nth-child(1) {
-    -webkit-transition-delay: 0.25s;
-            transition-delay: 0.25s;
+.lcm-aside__close svg {
+    fill: white;
 }
 
 .lcm-aside .menu {
@@ -183,10 +183,49 @@ html ::-webkit-scrollbar-thumb {
     text-transform: none;
     line-height: 1.4;
 }
+.lcm-aside .menu > .menu-item {
+    -webkit-transform: translateX(110px);
+            transform: translateX(110px);
+    -webkit-transition: all 0.4s 0.3s ease-in-out;
+    transition: all 0.4s 0.3s ease-in-out;
+    will-change: transform;
+}
+.nav-active .lcm-aside .menu > .menu-item {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    -webkit-transition: all 0.4s 0.2s ease-in-out;
+    transition: all 0.4s 0.2s ease-in-out;
+    will-change: transform;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(6) {
+    -webkit-transition-delay: 0.6s;
+            transition-delay: 0.6s;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(5) {
+    -webkit-transition-delay: 0.54s;
+            transition-delay: 0.54s;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(4) {
+    -webkit-transition-delay: 0.48s;
+            transition-delay: 0.48s;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(3) {
+    -webkit-transition-delay: 0.42s;
+            transition-delay: 0.42s;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(2) {
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+}
+.nav-active .lcm-aside .menu > .menu-item:nth-child(1) {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+}
 
 .wp-site-blocks .mdabuttons {
     position: fixed;
-    inset: 1rem 1rem auto auto;
+    right: 1rem;
+    top: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -305,41 +344,6 @@ body.noscroll {
 }
 body.noscroll #kt-scroll-up.scroll-visible {
     display: none;
-}
-
-.lcm-aside {
-    width: min(740px, 100%);
-    padding: 15vh max(3vw, 1.5rem) 10vh max(3vw, 1.5rem);
-    height: 100vh;
-    background-color: var(--wp-palette-1);
-    position: fixed;
-    inset: 0 0 0 auto;
-    z-index: 106;
-    -webkit-transform: translate(100%, 0) rotate(0.001deg);
-            transform: translate(100%, 0) rotate(0.001deg);
-    -webkit-transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
-            transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
-    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    will-change: transform;
-}
-.lcm-aside__close {
-    position: absolute;
-    inset: 1rem 2rem auto auto;
-    cursor: pointer;
-}
-.lcm-aside__close svg {
-    fill: white;
-}
-.nav-active .lcm-aside {
-    -webkit-transform: translate(0, 0) rotate(0.001deg);
-            transform: translate(0, 0) rotate(0.001deg);
-    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
-    transition: transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.7, 0.1, 0.2, 1);
 }
 
 .lcm-aside__rounded-div {
@@ -469,8 +473,8 @@ p {
     height: 137px;
     inset: 0;
     background: rgba(255, 255, 255, 0.35);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(-19%, #ffffff), color-stop(38.38%, rgba(255, 255, 255, 0.75)), to(rgba(255, 255, 255, 0)));
-    background: linear-gradient(180deg, #ffffff -19%, rgba(255, 255, 255, 0.75) 38.38%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-29%, #ffffff), color-stop(38.38%, rgba(255, 255, 255, 0.55)), color-stop(95%, rgba(255, 255, 255, 0)));
+    background: linear-gradient(180deg, #ffffff -29%, rgba(255, 255, 255, 0.55) 38.38%, rgba(255, 255, 255, 0) 95%);
     z-index: 1;
 }
 .site-header-wrap .site-branding a.brand img {
@@ -628,11 +632,14 @@ p {
 .page .content-wrap .fixed-title-as-background {
     width: 100%;
     max-width: 1290px;
+    padding-inline: 1.5rem;
     margin-inline: auto;
     position: fixed;
-    inset: 1rem auto auto auto;
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     opacity: 0;
-    letter-spacing: -0.04em;
     text-align: center;
     -webkit-transition: all 0s ease-in-out;
     transition: all 0s ease-in-out;
@@ -715,8 +722,8 @@ p {
 }
 @media (min-width: 901px) {
     .courses__inner {
-        -ms-grid-columns: (50%)[2];
-        grid-template-columns: repeat(2, 50%);
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
