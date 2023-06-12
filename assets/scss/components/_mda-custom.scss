@@ -19,12 +19,13 @@
         .fixed-title-as-background {
             width: 100%;
             max-width: 1290px;
+            padding-inline: 1.5rem;
             margin-inline: auto;
             position: fixed;
-            inset: 1rem auto auto auto;
-            // transform: translateX(120px) translateY(-50%);
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
             opacity: 0;
-            letter-spacing: -0.04em;
             text-align: center;
 
             transition: all 0s ease-in-out;
@@ -34,7 +35,6 @@
             &.visible {
                 opacity: 0.1;
                 transition: opacity 0.2s ease-in-out;
-                // transform: translateX(0) translateY(0);
             }
         }
     }

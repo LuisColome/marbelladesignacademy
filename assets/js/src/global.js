@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
     // $(".backtotop");
 
     $(window).scroll(function () {
-        if ($(document).scrollTop() > 90) {
+        if ($(document).scrollTop() > 110) {
             $(".fixed-title-as-background").addClass("visible");
         } else {
             $(".fixed-title-as-background").removeClass("visible");
