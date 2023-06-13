@@ -4,9 +4,11 @@
 // Title fixed as a background
 .page {
     .content-wrap {
-        & > * {
-            position: relative;
-            z-index: 2;
+        .entry-content {
+            & > * {
+                position: relative;
+                z-index: 2;
+            }
         }
 
         .mda-huge-font-size {
@@ -21,6 +23,7 @@
             max-width: 1290px;
             padding-inline: 1.5rem;
             margin-inline: auto;
+            margin-block: 2rem auto;
             position: fixed;
             top: 1rem;
             left: 50%;
@@ -31,6 +34,7 @@
             transition: all 0s ease-in-out;
             will-change: opacity;
             z-index: 0;
+            pointer-events: none;
 
             &.visible {
                 opacity: 0.1;
