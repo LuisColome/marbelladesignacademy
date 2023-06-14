@@ -30,6 +30,8 @@ function lcm_child_theme_setup() {
 
 	// Theme
     include_once( get_stylesheet_directory() . '/inc/navigation.php' );
+    include_once( get_stylesheet_directory() . '/inc/kadence-changes.php' );
+    include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 
     // Plugin Support
 	include_once( get_stylesheet_directory() . '/inc/acf.php' );
