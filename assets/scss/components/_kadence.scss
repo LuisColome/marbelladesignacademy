@@ -3,6 +3,12 @@
 
 /* Kadence
 --------------------------------------------------- */
+
+// Different logo on the Homepage
+.home .brand img {
+    content: url(/wp-content/uploads/logo_blanco.png);
+}
+
 .mda-main-slider {
     .kt-blocks-carousel {
         padding: 0;
