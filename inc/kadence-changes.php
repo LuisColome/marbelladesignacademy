@@ -8,11 +8,6 @@
  * @license     GPL-2.0+
 **/
 
-
-// Adds post type support for exceprt. 	
-add_post_type_support( 'page', 'excerpt' );
-
-
 /* Comments
 ------------------------------------------------------------------------------ */
 
