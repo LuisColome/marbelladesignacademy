@@ -1,0 +1,266 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+/* Vertical Slider custom block
+--------------------------------------------------- */
+// block container
+.mdaswiper {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+
+    // Swiper Container
+    .mdaslider {
+        width: 100%;
+        height: 100%;
+
+        // Swiper slide
+        .mdaslide__columns {
+            --info-column-width: max(31%, 320px);
+            position: relative;
+
+            // create the columns (mobile first)
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 60%;
+            gap: 0;
+
+            @include media(">=tablet") {
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr var(--info-column-width);
+
+                &-even {
+                    grid-template-columns: var(--info-column-width) 1fr;
+                }
+            }
+
+            @include media("<=tablet") {
+                &-even {
+                    .mdaslide__column.img-column {
+                        grid-row: 1 / 2;
+                    }
+                }
+            }
+
+            // The column takes alla the space
+            .mdaslide__column {
+                height: 100%;
+                overflow: hidden;
+
+                // Make sure the IMAGE takes all the space
+                &__inner {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: 50% 50%;
+
+                    // Animation ready
+                    transform: scale(1);
+                    transition: transform 0.1s 0.6s ease-in;
+                    will-change: transform;
+                }
+
+                .mdaslide__content__wrapper {
+                    width: 100%;
+                    height: 96%;
+
+                    // In the content column, align everything at the bottom.
+                    display: grid;
+                    align-items: end;
+                    grid-template-rows: 1fr;
+                }
+
+                &.info-column {
+                    background-color: var(--wp-palette-8);
+
+                    .mdaslide__content__wrapper {
+                        padding-block-end: 3rem;
+                        padding-inline: 1.5rem;
+                    }
+                }
+            }
+
+            // Linked title
+            .mdaslide__title {
+                // Align the title at the start on small screens.
+                align-self: start;
+                text-decoration: none;
+
+                @include media(">=tablet") {
+                    position: absolute;
+                    top: 21%;
+                    right: 14vw;
+                    left: auto;
+
+                    z-index: 21;
+                }
+            }
+
+            &-even {
+                .mdaslide__title {
+                    left: 14vw;
+                    right: auto;
+                }
+            }
+        }
+
+        // Targeted active slider and last slider with columns in prev state.
+        .swiper-slide-active,
+        .mdaslide__columns.swiper-slide-prev {
+            .mdaslide__column {
+                &__inner {
+                    // Picture zoom in animation
+                    transform: scale(1.05);
+                    transition: transform 6s cubic-bezier(0.39, 0.575, 0.565, 1);
+                }
+            }
+        }
+
+        // HR
+        .mdaslide__hr {
+            width: max(60%, 220px);
+            border-bottom: 1px solid var(--wp-palette-7);
+            margin-left: 0;
+            margin-block: 2rem;
+        }
+
+        // Slider link (Button)
+        .mdaslide__link {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 0.5rem;
+
+            color: var(--wp-palette-7);
+            text-decoration: none;
+            will-change: color;
+
+            svg {
+                fill: initial;
+                transition: fill 0.2s ease-in-out;
+                will-change: fill;
+            }
+
+            &:hover {
+                color: var(--wp-palette-1);
+                svg {
+                    fill: var(--wp-palette-1);
+                }
+            }
+        }
+    }
+}
+
+.mdaswiper {
+    // Swiper Container
+    .mdaslider {
+        // Extra Slide
+        .mdaslide__extra {
+            // The Extra Slide divided in Rows
+            .mdaslide__rows {
+                position: relative;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 40%;
+                gap: 0;
+                .mdaslide__row {
+                    &__pink-content {
+                        background-color: var(--wp-palette-1);
+                        min-height: 22%;
+
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+
+                    &:last-child {
+                        position: relative;
+                        z-index: 4;
+                    }
+                }
+            }
+
+            // Dark Overlay for the trasparent row with animation
+            .mdaslide__overlay {
+                position: absolute;
+                inset: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transition: opacity 0.1s ease-in-out;
+                will-change: opacity;
+            }
+
+            // Wait until the slide is active to see the overlay
+            &.swiper-slide-active {
+                .mdaslide__overlay {
+                    opacity: 1;
+                    transition: opacity 0.3s 0.4s ease-in-out;
+                }
+            }
+
+            .mdaslide__extra__title,
+            .mdaslide__extra__link {
+                text-align: center;
+                color: white;
+            }
+
+            // Slider link (Button)
+            .mdaslide__extra__link {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 0.5rem;
+
+                color: var(--wp-palette-8);
+                text-decoration: none;
+                text-transform: uppercase;
+                will-change: color;
+
+                svg {
+                    fill: var(--wp-palette-8);
+                    transition: fill 0.15s ease-in-out;
+                    will-change: fill;
+                }
+
+                &:hover {
+                    color: var(--wp-palette-2);
+                    text-decoration: underline;
+                    svg {
+                        fill: var(--wp-palette-2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mdaswiper {
+    .swiper-pagination {
+        &.swiper-pagination-vertical.swiper-pagination-bullets {
+            --swiper-pagination-bullet-size: 8px;
+            --swiper-pagination-right: 1rem;
+
+            // align the pagination bullets
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 0;
+            align-items: center;
+
+            .swiper-pagination-bullet {
+                transition: all 0.3s ease-in-out;
+            }
+
+            .swiper-pagination-bullet-active {
+                transform: scale(1.5);
+                background-color: var(--wp-palette-1);
+            }
+        }
+    }
+}

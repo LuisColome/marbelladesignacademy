@@ -1,0 +1,207 @@
+@use "abstracts" as *;
+@use "../vendor/include-media.scss" as *;
+
+// Grid of courses
+.programmes {
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.programme {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    display: grid;
+
+    transition: var(--animation-fast);
+    will-change: background-color;
+
+    &__columns {
+        --info-column-width: max(28%, 320px);
+        // position: relative;
+
+        // create the columns (mobile first)
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 50%;
+        gap: 0;
+
+        @include media(">=tablet") {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr var(--info-column-width);
+        }
+    }
+
+    &-even {
+        //
+        .programme__columns {
+            @include media(">=tablet") {
+                grid-template-columns: var(--info-column-width) 1fr;
+            }
+        }
+
+        .programme__column-img {
+            @include media("<=tablet") {
+                grid-row: 1 / 2;
+            }
+        }
+    }
+
+    // Course image
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: no-repeat 50% 50%;
+        background-size: contain;
+        z-index: 2;
+
+        &__aligned__left-top {
+            background-position: 0% 0%;
+        }
+        &__aligned__left-center {
+            background-position: 0% 50%;
+        }
+        &__aligned__left-bottom {
+            background-position: 0% 100%;
+        }
+        &__aligned__center-top {
+            background-position: 50% 0%;
+        }
+        &__aligned__center-center {
+            background-position: 50% 50%;
+        }
+        &__aligned__center-bottom {
+            background-position: 50% 100%;
+        }
+        &__aligned__right-top {
+            background-position: 100% 0%;
+        }
+        &__aligned__right-center {
+            background-position: 100% 50%;
+        }
+        &__aligned__right-bottom {
+            background-position: 100% 100%;
+        }
+    }
+}
+
+.programme__column-img {
+    .programme-fashion & {
+        background-color: rgba(255, 5, 1, 0.25);
+    }
+    .programme-design & {
+        background-color: rgba(79, 134, 219, 0.25);
+    }
+    .programme-interior & {
+        background-color: rgba(0, 119, 16, 0.25);
+    }
+    .programme-foundation & {
+        background-color: rgba(255, 153, 34, 0.25);
+    }
+}
+
+.programme__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.programme__header {
+    position: absolute;
+    top: 40%;
+    left: 1rem;
+    right: auto;
+    z-index: 13;
+    width: min(calc(100% - 2rem), 48rem);
+
+    @include media(">=tablet") {
+        width: min(75%, 48rem);
+        top: 16%;
+        right: 2%;
+        left: auto;
+
+        .programme-even & {
+            right: auto;
+            left: 1rem;
+        }
+    }
+
+    .programme__subtitle {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    .programme__title {
+        line-height: 0.9;
+        margin-block-start: 0.5rem;
+    }
+}
+
+.programme__title {
+    .programme-fashion & {
+        color: var(--wp-palette-5);
+    }
+    .programme-design & {
+        color: var(--wp-palette-3);
+    }
+    .programme-interior & {
+        color: var(--wp-palette-4);
+    }
+    .programme-foundation & {
+        color: var(--wp-palette-6);
+    }
+}
+
+.programme__column-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+}
+
+.programme__info {
+    padding-inline: 1rem;
+    padding-block-end: 3rem;
+
+    // HR
+    .programme__hr {
+        width: max(60%, 220px);
+        border-bottom: 1px solid var(--wp-palette-7);
+        margin-left: 0;
+        margin-block: 2rem;
+    }
+    // Programmes link (Button)
+    .programme__link {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        color: var(--wp-palette-7);
+        text-decoration: none;
+        font-weight: 600;
+        // text-transform: uppercase;
+        will-change: color;
+
+        svg {
+            fill: var(--wp-palette-7);
+            transition: fill 0.15s ease-in-out;
+            will-change: fill;
+        }
+
+        &:hover {
+            color: var(--wp-palette-1);
+            text-decoration: underline;
+            svg {
+                fill: var(--wp-palette-1);
+            }
+        }
+    }
+}

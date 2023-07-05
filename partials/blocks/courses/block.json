@@ -1,0 +1,14 @@
+{
+    "name": "acf/mda-courses",
+    "title": "Full Width Courses",
+    "description": "Full width block to include he couses in the Homepage.",
+    "category": "theme",
+    "icon": "grid-view",
+    "keywords": ["grid", "courses", "fashion", "custom", "gallery"],
+    "version": "0.9.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "courses.php"
+    },
+    "align": "full"
+}

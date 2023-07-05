@@ -1,0 +1,22 @@
+{
+    "name": "acf/mda-vertical-slider-courses",
+    "title": "Full Width and Height vertical slider for the courses",
+    "description": "A full Width and Height vertical slider to display sections on mouse scroll, for the Our Programmes page.",
+    "category": "theme",
+    "icon": "images-alt2",
+    "keywords": [
+        "slider",
+        "vertical",
+        "about",
+        "diapositivas",
+        "gallery",
+        "courses",
+        "programmes"
+    ],
+    "version": "0.1.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "vertical-slider-courses.php"
+    },
+    "align": "full"
+}

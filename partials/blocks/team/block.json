@@ -1,0 +1,14 @@
+{
+    "name": "acf/mda-team-members",
+    "title": "Team Members",
+    "description": "Team members grid page layout.",
+    "category": "theme",
+    "icon": "groups",
+    "keywords": ["team", "grid", "layout", "members", "people"],
+    "version": "0.9.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "team.php"
+    },
+    "align": "full"
+}

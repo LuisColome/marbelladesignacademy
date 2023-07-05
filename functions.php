@@ -34,7 +34,22 @@ function lcm_child_theme_setup() {
     include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 
     // Plugin Support
-	include_once( get_stylesheet_directory() . '/inc/acf.php' );
+	// include_once( get_stylesheet_directory() . '/inc/acf.php' );
+
+    // Swiper scripts and styles
+    // if( is_singular()) {
+    //     // We only want the script if it's a singular page
+    //     $id = get_the_ID();
+    //     if( has_block('acf/mda-vertical-slider' , $id) ) {
+    //         wp_enqueue_script( 'swiper-script', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/swiper-bundle.min.js' ), true );
+    //         wp_enqueue_style( 'swiper-style', get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css', false, '9.4.1' );
+    //         wp_enqueue_script( 'swiper-init', get_stylesheet_directory_uri() . '/assets/js/swiper-init.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/swiper-init.min.js' ), true );
+    //     }
+    // }
+
+    wp_enqueue_script( 'swiper-script', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/swiper-bundle.min.js' ), true );
+    wp_enqueue_style( 'swiper-style', get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css', false, '9.4.1' );
+    wp_enqueue_script( 'swiper-init', get_stylesheet_directory_uri() . '/assets/js/swiper-init.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/swiper-init.js' ), true );
 
 }
 add_action( 'after_setup_theme', 'lcm_child_theme_setup', 15 );
@@ -64,3 +79,33 @@ function marbelladesignacademy_change_option_defaults( $defaults ) {
 	return wp_parse_args( $new_defaults, $defaults );
 }
 add_filter( 'kadence_theme_options_defaults', 'marbelladesignacademy_change_option_defaults', 20 );
+
+
+/**
+ * ACF - Register Options Page
+ *
+ */
+function register_redverde_options_page() {
+    if ( function_exists( 'acf_add_options_page' ) ) {
+        acf_add_options_page( array(
+            'title'      => __( 'MDA Options', 'mda' ),
+	        'capability' => 'manage_options',
+        ) );
+    }
+}
+add_action( 'init', 'register_redverde_options_page', 10 );
+
+
+/**
+ * ACF - Register custom blocks
+ * 
+ */
+function redverde_register_acf_blocks() {
+    register_block_type( __DIR__ . '/partials/blocks/courses' );
+    register_block_type( __DIR__ . '/partials/blocks/team' );
+    register_block_type( __DIR__ . '/partials/blocks/team-by-choice' );
+    register_block_type( __DIR__ . '/partials/blocks/vertical-slider' );
+    // register_block_type( __DIR__ . '/partials/blocks/vertical-slider-courses' );
+    register_block_type( __DIR__ . '/partials/blocks/programmes' );
+}
+add_action( 'init', 'redverde_register_acf_blocks', 10 );

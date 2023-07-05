@@ -1,0 +1,14 @@
+{
+    "name": "acf/mda-vertical-slider",
+    "title": "Full Width and Height vertical slider",
+    "description": "a full Width and Height vertical slider to display sections on mouse scroll.",
+    "category": "theme",
+    "icon": "images-alt2",
+    "keywords": ["slider", "vertical", "about", "diapositivas", "gallery"],
+    "version": "0.1.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "vertical-slider.php"
+    },
+    "align": "full"
+}

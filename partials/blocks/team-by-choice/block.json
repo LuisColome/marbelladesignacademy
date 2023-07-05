@@ -1,0 +1,14 @@
+{
+    "name": "acf/mda-team-members-by-choice",
+    "title": "Team Members by choice",
+    "description": "Team members (by choice) grid page layout.",
+    "category": "theme",
+    "icon": "groups",
+    "keywords": ["team", "grid", "layout", "members", "people", "choice"],
+    "version": "0.9.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "team-by-choice.php"
+    },
+    "align": "full"
+}

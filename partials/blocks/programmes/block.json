@@ -1,0 +1,24 @@
+{
+    "name": "acf/mda-programmes",
+    "title": "Our Programmes custom block",
+    "description": "A full width custom block to display the courses in one column for the Our Programmes page.",
+    "category": "theme",
+    "icon": "grid-view",
+    "keywords": [
+        "grid",
+        "courses",
+        "fashion",
+        "custom",
+        "gallery",
+        "design",
+        "foundation",
+        "one column",
+        "programmes"
+    ],
+    "version": "0.1.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "programmes.php"
+    },
+    "align": "full"
+}
