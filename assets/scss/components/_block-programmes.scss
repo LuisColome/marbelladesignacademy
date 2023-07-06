@@ -12,8 +12,8 @@
 .programme {
     position: relative;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
+    min-height: 100svh;
 
     display: grid;
 
@@ -32,7 +32,12 @@
 
         @include media(">=tablet") {
             grid-template-rows: 1fr;
-            grid-template-columns: 1fr var(--info-column-width);
+            grid-template-columns: 1fr 320px;
+        }
+
+        @include media(">=large") {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 28%;
         }
     }
 
@@ -40,7 +45,10 @@
         //
         .programme__columns {
             @include media(">=tablet") {
-                grid-template-columns: var(--info-column-width) 1fr;
+                grid-template-columns: 320px 1fr;
+            }
+            @include media(">=large") {
+                grid-template-columns: 28% 1fr;
             }
         }
 
@@ -114,32 +122,41 @@
 }
 
 .programme__header {
-    position: absolute;
-    top: 40%;
-    left: 1rem;
-    right: auto;
+    width: calc(100% - 2rem);
     z-index: 13;
-    width: min(calc(100% - 2rem), 48rem);
+    // we need some margin top to give space to the header.
+    margin-block-start: 40vh;
 
     @include media(">=tablet") {
-        width: min(75%, 48rem);
-        top: 16%;
-        right: 2%;
-        left: auto;
+        margin-block-start: 20vh;
+        margin-block-end: 12vh;
+        width: 60vw;
+        margin-inline-start: calc(-60vw + 200px);
 
         .programme-even & {
-            right: auto;
-            left: 1rem;
+            margin-inline-start: 7.5rem;
+            margin-inline-end: auto;
+        }
+    }
+    @include media(">=large") {
+        margin-block: 2vh 8vh;
+        width: min(75vw, 48rem);
+        margin-inline: min(-35vw, -24rem) 2rem;
+
+        .programme-even & {
+            margin-inline: 7.5rem auto;
         }
     }
 
     .programme__subtitle {
         font-size: 1rem;
         text-transform: uppercase;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
     }
     .programme__title {
         line-height: 0.9;
         margin-block-start: 0.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
     }
 }
 
