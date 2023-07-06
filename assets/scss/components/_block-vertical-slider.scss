@@ -61,8 +61,8 @@
                 }
 
                 .mdaslide__content__wrapper {
-                    width: 100%;
-                    height: 96%;
+                    width: calc(100% - 3rem);
+                    height: calc(100% - 3rem);
 
                     // In the content column, align everything at the bottom.
                     display: grid;
