@@ -1,6 +1,6 @@
 # MDA (Marbella Design Academy) - Kadence Child Theme
 
-[![MDA Child Theme v0.9.1 badge][changelog-badge]][changelog] [![Version 0.9.1 Badge][version-badge]][changelog] [![Last commit badge][last-commit]][last-commit-link]
+[![MDA Child Theme v0.9.2 badge][changelog-badge]][changelog] [![Version 0.9.2 Badge][version-badge]][changelog] [![Last commit badge][last-commit]][last-commit-link]
 
 ![TheDock Screenshot](screenshot.png)
 
@@ -40,7 +40,7 @@ Without these projects, this WordPress Genesis Starter Child Theme wouldn't be w
 -   [Eduardo Boucas' Include Media Queries](https://eduardoboucas.github.io/include-media/)
 
 [changelog]: ./CHANGELOG.md
-[changelog-badge]: https://img.shields.io/badge/Changelog-MDA%20Child%20Theme%20v0.9.1-orange
-[version-badge]: https://img.shields.io/badge/version-0.9.1-informational.svg
+[changelog-badge]: https://img.shields.io/badge/Changelog-MDA%20Child%20Theme%20v0.9.2-orange
+[version-badge]: https://img.shields.io/badge/version-0.9.2-informational.svg
 [last-commit]: https://img.shields.io/github/last-commit/luiscolome/marbelladesignacademy/main?color=yellow&logoColor=red
 [last-commit-link]: https://github.com/LuisColome/marbelladesignacademy/commit/develop
