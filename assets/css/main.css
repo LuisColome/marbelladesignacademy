@@ -109,7 +109,7 @@ html ::-webkit-scrollbar-thumb {
 
 .lcm-aside {
     width: min(740px, 100%);
-    padding: 15vh max(3vw, 1.5rem) 10vh max(3vw, 1.5rem);
+    padding: 10vh max(3vw, 1.5rem) 0 max(3vw, 1.5rem);
     height: 100vh;
     background-color: var(--wp-palette-1);
     position: fixed;
@@ -143,6 +143,15 @@ html ::-webkit-scrollbar-thumb {
     fill: white;
 }
 
+.lcm-aside__inner {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+}
 .lcm-aside .menu {
     min-width: 330px;
     list-style: none;
