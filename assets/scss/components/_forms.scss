@@ -5,7 +5,7 @@
 --------------------------------------------------- */
 // Some general styles
 .wpforms-container-full {
-    &.mda-application-form {
+    &.mda-wpforms-form {
         .wpforms-form {
             // Default for headings
             h2 {
@@ -31,7 +31,7 @@
                     border-top: 1px solid var(--wp-palette-7);
                 }
 
-                // Button styles
+                // Page Button styles
                 .wpforms-page-button {
                     border: none;
                     padding: 0.5rem 1rem;
@@ -47,27 +47,8 @@
                     }
                 }
             }
-            .wpforms-submit-container {
-                display: flex;
-                justify-content: center;
-                .wpforms-submit {
-                    border: none;
-                    padding: 0.5rem 1rem;
-                    background-color: var(--wp-palette-1);
-                    font-family: var(--ff-heading);
-                    font-weight: 700;
-                    color: white;
-                    text-transform: uppercase;
-                    border-radius: 0.5rem;
-
-                    &:hover {
-                        background-color: var(--wp-palette-7);
-                    }
-                }
-            }
 
             // General styles for input fields
-
             input.wpforms-field-medium,
             select.wpforms-field-medium,
             .wpforms-field-row.wpforms-field-medium {
@@ -113,6 +94,57 @@
         }
     }
 }
+
+.wpforms-container-full {
+    &.mda-application-form {
+        // Pagination buttons
+        .wpforms-field-pagebreak {
+            margin-block: 2rem;
+            &:last-of-type {
+                border-top: 1px solid var(--wp-palette-7);
+            }
+
+            // Page Button styles
+            .wpforms-page-button {
+                border: none;
+                padding: 0.5rem 1rem;
+                background-color: var(--wp-palette-7);
+                font-family: var(--ff-heading);
+                font-weight: 700;
+                color: white;
+                text-transform: uppercase;
+                border-radius: 0.5rem;
+
+                &:hover {
+                    background-color: var(--wp-palette-1);
+                }
+            }
+        }
+
+        .wpforms-form {
+            // Appycation form button styles
+            .wpforms-submit-container {
+                display: flex;
+                justify-content: center;
+                .wpforms-submit {
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    background-color: var(--wp-palette-1);
+                    font-family: var(--ff-heading);
+                    font-weight: 700;
+                    color: white;
+                    text-transform: uppercase;
+                    border-radius: 0.5rem;
+
+                    &:hover {
+                        background-color: var(--wp-palette-7);
+                    }
+                }
+            }
+        }
+    }
+}
+
 .wpforms-container-full {
     &.mda-application-form {
         .wpforms-page:not(.wpforms-page-1):not(.mda-page-indicator) {

@@ -1461,26 +1461,26 @@ p {
 
 /* WP Forms
 --------------------------------------------------- */
-.wpforms-container-full.mda-application-form .wpforms-form h2 {
+.wpforms-container-full.mda-wpforms-form .wpforms-form h2 {
     font-size: var(--hfs-2);
     text-transform: uppercase;
     margin-block: 1rem 1em;
 }
-.wpforms-container-full.mda-application-form .wpforms-form h4 {
+.wpforms-container-full.mda-wpforms-form .wpforms-form h4 {
     font-size: var(--hfs-4);
     margin-block: 1rem 1em;
 }
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-page-indicator {
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-page-indicator {
     max-width: 37.5rem;
     margin-inline: auto;
 }
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-pagebreak {
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-field-pagebreak {
     margin-block: 2rem;
 }
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-pagebreak:last-of-type {
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-field-pagebreak:last-of-type {
     border-top: 1px solid var(--wp-palette-7);
 }
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-pagebreak .wpforms-page-button {
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-field-pagebreak .wpforms-page-button {
     border: none;
     padding: 0.5rem 1rem;
     background-color: var(--wp-palette-7);
@@ -1490,7 +1490,65 @@ p {
     text-transform: uppercase;
     border-radius: 0.5rem;
 }
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-pagebreak .wpforms-page-button:hover {
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-field-pagebreak .wpforms-page-button:hover {
+    background-color: var(--wp-palette-1);
+}
+.wpforms-container-full.mda-wpforms-form .wpforms-form input.wpforms-field-medium,
+.wpforms-container-full.mda-wpforms-form .wpforms-form select.wpforms-field-medium,
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpforms-field-row.wpforms-field-medium {
+    max-width: 100%;
+}
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=date],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=datetime],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=datetime-local],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=email],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=month],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=number],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=password],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=range],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=search],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=tel],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=text],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=time],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=url],
+.wpforms-container-full.mda-wpforms-form .wpforms-form input[type=week],
+.wpforms-container-full.mda-wpforms-form .wpforms-form select,
+.wpforms-container-full.mda-wpforms-form .wpforms-form textarea {
+    background-color: var(--wp-palette-8);
+    border: 1px solid var(--wp-palette-7);
+    height: 3rem;
+}
+.wpforms-container-full.mda-wpforms-form .wpforms-form input:focus,
+.wpforms-container-full.mda-wpforms-form .wpforms-form textarea:focus,
+.wpforms-container-full.mda-wpforms-form .wpforms-form select:focus,
+.wpforms-container-full.mda-wpforms-form .wpforms-form .is-focused .choices__inner,
+.wpforms-container-full.mda-wpforms-form .wpforms-form .is-open .choices__inner,
+.wpforms-container-full.mda-wpforms-form .wpforms-form .is-open .choices__list--dropdown {
+    background-color: var(--wp-palette-9);
+    border: 1px solid var(--wp-palette-1);
+}
+.wpforms-container-full.mda-wpforms-form .wpforms-form .wpformsnote {
+    background-color: var(--global-palette2);
+    padding: 1rem;
+}
+
+.wpforms-container-full.mda-application-form .wpforms-field-pagebreak {
+    margin-block: 2rem;
+}
+.wpforms-container-full.mda-application-form .wpforms-field-pagebreak:last-of-type {
+    border-top: 1px solid var(--wp-palette-7);
+}
+.wpforms-container-full.mda-application-form .wpforms-field-pagebreak .wpforms-page-button {
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--wp-palette-7);
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+}
+.wpforms-container-full.mda-application-form .wpforms-field-pagebreak .wpforms-page-button:hover {
     background-color: var(--wp-palette-1);
 }
 .wpforms-container-full.mda-application-form .wpforms-form .wpforms-submit-container {
@@ -1513,44 +1571,6 @@ p {
 }
 .wpforms-container-full.mda-application-form .wpforms-form .wpforms-submit-container .wpforms-submit:hover {
     background-color: var(--wp-palette-7);
-}
-.wpforms-container-full.mda-application-form .wpforms-form input.wpforms-field-medium,
-.wpforms-container-full.mda-application-form .wpforms-form select.wpforms-field-medium,
-.wpforms-container-full.mda-application-form .wpforms-form .wpforms-field-row.wpforms-field-medium {
-    max-width: 100%;
-}
-.wpforms-container-full.mda-application-form .wpforms-form input[type=date],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=datetime],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=datetime-local],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=email],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=month],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=number],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=password],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=range],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=search],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=tel],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=text],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=time],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=url],
-.wpforms-container-full.mda-application-form .wpforms-form input[type=week],
-.wpforms-container-full.mda-application-form .wpforms-form select,
-.wpforms-container-full.mda-application-form .wpforms-form textarea {
-    background-color: var(--wp-palette-8);
-    border: 1px solid var(--wp-palette-7);
-    height: 3rem;
-}
-.wpforms-container-full.mda-application-form .wpforms-form input:focus,
-.wpforms-container-full.mda-application-form .wpforms-form textarea:focus,
-.wpforms-container-full.mda-application-form .wpforms-form select:focus,
-.wpforms-container-full.mda-application-form .wpforms-form .is-focused .choices__inner,
-.wpforms-container-full.mda-application-form .wpforms-form .is-open .choices__inner,
-.wpforms-container-full.mda-application-form .wpforms-form .is-open .choices__list--dropdown {
-    background-color: var(--wp-palette-9);
-    border: 1px solid var(--wp-palette-1);
-}
-.wpforms-container-full.mda-application-form .wpforms-form .wpformsnote {
-    background-color: var(--global-palette2);
-    padding: 1rem;
 }
 
 .wpforms-container-full.mda-application-form .wpforms-page:not(.wpforms-page-1):not(.mda-page-indicator) {
