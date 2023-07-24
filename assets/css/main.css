@@ -627,7 +627,7 @@ p {
 }
 .page .content-wrap .fixed-title-as-background {
     width: 100%;
-    max-width: 1290px;
+    max-width: var(--global-content-width);
     padding-inline: 1.5rem;
     margin-inline: auto;
     margin-block: 2rem auto;
