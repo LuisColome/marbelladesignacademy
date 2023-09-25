@@ -63,6 +63,7 @@
     --hfs-4: clamp(1.375rem, 1vw + 1rem, 1.5rem);
     --hfs-5: clamp(1.1rem, 1rem + 0.7vw, 1.4rem);
     --hfs-6: clamp(1.05rem, 1rem + 0.5vw, 1.25rem);
+    --hfs-slide-titles: clamp(2.625rem, 6.988vw + 0.66rem, 6.25rem);
     --animation-primary: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
     --animation-fast: all 0.35s cubic-bezier(0.7, 0, 0.3, 1);
     --animation-smooth: all 0.7s cubic-bezier(0.7, 0, 0.3, 1);
@@ -620,10 +621,11 @@ p {
     z-index: 2;
 }
 .page .content-wrap .mda-huge-font-size {
-    font-size: clamp(4rem, 18.63vw - 1.473rem, 12.5rem);
+    font-size: clamp(4rem, 15.588vw - 1.846rem, 10.625rem);
     line-height: 0.88;
     -webkit-margin-after: 1rem;
             margin-block-end: 1rem;
+    letter-spacing: -0.028em;
 }
 .page .content-wrap .fixed-title-as-background {
     width: 100%;
@@ -1286,6 +1288,9 @@ p {
         left: auto;
         z-index: 21;
     }
+}
+.mdaswiper .mdaslider .mdaslide__columns .mdaslide__title .mda-slide-heading {
+    font-size: var(--hfs-slide-titles);
 }
 .mdaswiper .mdaslider .mdaslide__columns-even .mdaslide__title {
     left: 14vw;

@@ -62,7 +62,7 @@ if ( ! empty( $block['align'] ) ) {
                 <div class="mdaslide__column info-column">
                     <div class="mdaslide__content__wrapper">
                         <a class="mdaslide__title" href="<?php echo esc_url( $link_url ); ?>">
-                            <h2 class="mdaslide__titlee mda-huge-heading"><?php echo $title; ?></h2>
+                            <h2 class="mda-slide-heading"><?php echo $title; ?></h2>
                         </a>
                         <?php echo $content; ?>
                         <hr class="mdaslide__hr">
@@ -83,7 +83,7 @@ if ( ! empty( $block['align'] ) ) {
                 <div class="mdaslide__column info-column">
                     <div class="mdaslide__content__wrapper">
                         <a class="mdaslide__title" href="<?php echo esc_url( $link_url ); ?>">
-                            <h2 class="mdaslide__titlee mda-huge-heading"><?php echo $title; ?></h2>
+                            <h2 class="mda-slide-heading"><?php echo $title; ?></h2>
                         </a>
                         <?php echo $content; ?>
                         <hr class="mdaslide__hr">

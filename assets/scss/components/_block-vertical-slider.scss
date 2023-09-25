@@ -94,6 +94,10 @@
 
                     z-index: 21;
                 }
+
+                .mda-slide-heading {
+                    font-size: var(--hfs-slide-titles);
+                }
             }
 
             &-even {
