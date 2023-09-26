@@ -52,7 +52,9 @@
         min-width: 330px;
 
         list-style: none;
-        margin: 0;
+        margin: 0 0 4rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid white;
 
         .menu-item {
             position: relative;
@@ -78,6 +80,10 @@
                     color: var(--wp-palette-2);
                     // text-decoration: underline;
                 }
+            }
+
+            &.has-more-bottom-space {
+                margin-bottom: 1.5rem;
             }
         }
 

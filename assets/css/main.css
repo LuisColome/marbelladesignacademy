@@ -156,7 +156,9 @@ html ::-webkit-scrollbar-thumb {
 .lcm-aside .menu {
     min-width: 330px;
     list-style: none;
-    margin: 0;
+    margin: 0 0 4rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid white;
 }
 .lcm-aside .menu .menu-item {
     position: relative;
@@ -177,6 +179,9 @@ html ::-webkit-scrollbar-thumb {
 }
 .lcm-aside .menu .menu-item:hover > a, .lcm-aside .menu .menu-item.current-menu-item > a, .lcm-aside .menu .menu-item.current-menu-ancestor > a {
     color: var(--wp-palette-2);
+}
+.lcm-aside .menu .menu-item.has-more-bottom-space {
+    margin-bottom: 1.5rem;
 }
 .lcm-aside .menu .sub-menu {
     list-style: none;
